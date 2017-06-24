@@ -13,6 +13,7 @@ if (Meteor.isServer) {
         title: 'Test post',
         description: 'Test description',
         userId: 'user_id',
+        author: 'test',
         users: [],
         likes: 0
       });

@@ -3,7 +3,7 @@
 // https://guide.meteor.com/testing.html
 
 import { assert } from 'meteor/practicalmeteor:chai';
-import Posts from '../links.js';
+import Posts from '../posts.js';
 import { PublicationCollector } from 'meteor/johanbrook:publication-collector';
 import './publications.js';
 

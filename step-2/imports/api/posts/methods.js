@@ -16,7 +16,7 @@ Meteor.methods({
       description,
       userId,
       likes: 0,
-      author: Meteor.user().emails[0].address,
+      author: /*Meteor.user().emails[0].address*/'yolo',
       createdAt: new Date(),
       users: []
     });

@@ -18,7 +18,7 @@ if (Meteor.isServer) {
 
       addPost.apply({}, ['test', 'test description', 'user_id']);
 
-      assert.equal(Links.find().count(), 1);
+      assert.equal(Posts.find().count(), 1);
     });
   });
 }
