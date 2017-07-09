@@ -6,31 +6,31 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 const userSchema = new SimpleSchema({
   emails: {
-    type: [Object]
+    type: [Object],
   },
-  "emails.$.address": {
+  'emails.$.address': {
     type: String,
     regEx: SimpleSchema.RegEx.Email,
-    label: "Email Address"
+    label: 'Email Address',
   },
-  "emails.$.verified": {
+  'emails.$.verified': {
     type: Boolean,
-    defaultValue: false
+    defaultValue: false,
   },
   createdAt: {
-    type: Date
+    type: Date,
   },
   profile: {
     type: Object,
     optional: true,
-    blackbox: true
+    blackbox: true,
   },
   services: {
     type: Object,
     optional: true,
-    blackbox: true
-  }
-})
+    blackbox: true,
+  },
+});
 
 const Users = Meteor.users;
 Users.attachSchema(userSchema);

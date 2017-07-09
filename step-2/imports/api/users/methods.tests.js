@@ -8,12 +8,12 @@ import Users from './users.js';
 import './methods.js';
 
 if (Meteor.isServer) {
-  describe('users methods', function () {
-    beforeEach(function () {
+  describe('users methods', () => {
+    beforeEach(() => {
       Users.remove({});
     });
 
-    it('can add a new user', function () {
+    it('can add a new user', () => {
       const addUser = Meteor.server.method_handlers['users.insert'];
 
       addUser.apply({}, ['test@test.com', 'password']);

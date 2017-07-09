@@ -9,9 +9,9 @@ Meteor.startup(() => {
   let userId = null;
   if (Users.find().count() === 0) {
     userId = Accounts.createUser({
-        email: 'nx@nodexperts.com',
-        password: 'nx@12345'
-      });
+      email: 'nx@nodexperts.com',
+      password: 'nx@12345',
+    });
   } else {
     userId = Users.findOne()._id;
   }
@@ -22,28 +22,28 @@ Meteor.startup(() => {
         description: 'Meteor is awesome for all types of application',
         likes: 0,
         users: [],
-        author: userId
+        author: userId,
       },
       {
         title: 'Title',
         description: 'Description here',
         likes: 0,
         users: [],
-        author: userId
+        author: userId,
       },
       {
         title: 'Reactive application with Meteor',
         description: 'Reactivity',
         likes: 0,
         users: [],
-        author: userId
+        author: userId,
       },
       {
         title: 'Title two',
         description: 'Here',
         likes: 0,
         users: [],
-        author: userId
+        author: userId,
       },
     ];
 

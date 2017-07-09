@@ -8,12 +8,12 @@ import Posts from './posts.js';
 import './methods.js';
 
 if (Meteor.isServer) {
-  describe('post methods', function () {
-    beforeEach(function () {
+  describe('post methods', () => {
+    beforeEach(() => {
       Posts.remove({});
     });
 
-    it('can add a new post', function () {
+    it('can add a new post', () => {
       const addPost = Meteor.server.method_handlers['posts.insert'];
 
       addPost.apply({}, ['test', 'test description', 'user_id']);

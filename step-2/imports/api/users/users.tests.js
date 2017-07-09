@@ -7,8 +7,8 @@ import { assert } from 'meteor/practicalmeteor:chai';
 import Users from './users.js';
 
 if (Meteor.isServer) {
-  describe('users collection', function () {
-    it('insert correctly', function () {
+  describe('users collection', () => {
+    it('insert correctly', () => {
       const userId = Accounts.createUser({
         email: 'testuser@test.com',
         password: '123445',

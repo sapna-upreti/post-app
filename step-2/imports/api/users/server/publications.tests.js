@@ -7,9 +7,9 @@ import Users from '../users.js';
 import { PublicationCollector } from 'meteor/johanbrook:publication-collector';
 import './publications.js';
 
-describe('links publications', function () {
+describe('links publications', () => {
   let id;
-  beforeEach(function () {
+  beforeEach(() => {
     Users.remove({});
     id = Accounts.createUser({
       email: 'test@test.com',
@@ -17,8 +17,8 @@ describe('links publications', function () {
     });
   });
 
-  describe('user.byId', function () {
-    it('send current user', function (done) {
+  describe('user.byId', () => {
+    it('send current user', (done) => {
       const collector = new PublicationCollector();
       collector.collect('user.byId', id, (collections) => {
         assert.equal(collections.users.length, 1);

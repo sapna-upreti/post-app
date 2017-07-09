@@ -7,17 +7,17 @@ Template.addPost.rendered = function () {
 };
 
 Template.addPost.events({
-  'submit': function(event) {
+  submit(event) {
     event.preventDefault();
     const data = {};
-    $('form').serializeArray().map((obj) => data[obj.name] = obj.value);
+    $('form').serializeArray().map(obj => data[obj.name] = obj.value);
     Meteor.call('posts.insert', data.title, data.description, (err, res) => {
-      if(err) {
+      if (err) {
         Materialize.toast(err.reason || 'Unknown Error', 4000, 'rounded');
       } else {
         Materialize.toast('Post added Successfully', 4000, 'rounded');
         FlowRouter.go('/posts');
       }
     });
-  }
+  },
 });

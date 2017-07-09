@@ -7,15 +7,15 @@ import { assert } from 'meteor/practicalmeteor:chai';
 import Posts from './posts.js';
 
 if (Meteor.isServer) {
-  describe('post collection', function () {
-    it('insert correctly', function () {
+  describe('post collection', () => {
+    it('insert correctly', () => {
       const postId = Posts.insert({
         title: 'Test post',
         description: 'Test description',
         userId: 'user_id',
         author: 'test',
         users: [],
-        likes: 0
+        likes: 0,
       });
       const added = Posts.find({ _id: postId });
       const collectionName = added._getCollectionName();

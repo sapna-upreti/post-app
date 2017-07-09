@@ -7,19 +7,19 @@ import Posts from '../posts.js';
 import { PublicationCollector } from 'meteor/johanbrook:publication-collector';
 import './publications.js';
 
-describe('posts publications', function () {
-  beforeEach(function () {
+describe('posts publications', () => {
+  beforeEach(() => {
     Posts.remove({});
     Posts.insert({
       title: 'NX homepage',
       description: 'This is our home page',
       author: 'userId',
-      likes: 2
+      likes: 2,
     });
   });
 
-  describe('posts.all', function () {
-    it('sends all posts', function (done) {
+  describe('posts.all', () => {
+    it('sends all posts', (done) => {
       const collector = new PublicationCollector();
       collector.collect('posts.all', (collections) => {
         assert.equal(collections.posts.length, 1);

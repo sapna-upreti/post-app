@@ -8,26 +8,25 @@ Template.post.onRendered = function () {
 };
 
 Template.post.helpers({
-	isReady: function(sub) {
-    if(sub) {
+  isReady(sub) {
+    if (sub) {
       return FlowRouter.subsReady(sub);
-    } else {
-      return FlowRouter.subsReady();
     }
+    return FlowRouter.subsReady();
   },
-  posts: function () {
+  posts() {
   	return Posts.find();
   },
-  isLiked: function (userIds) {
-  	return userIds.indexOf(Meteor.userId()) >= 0; 
-  }
+  isLiked(userIds) {
+  	return userIds.indexOf(Meteor.userId()) >= 0;
+  },
 });
 
 Template.post.events({
-	'click #like': function (events) {
-		Meteor.call('posts.like', this._id, Meteor.userId());
-	},
-	'click #unlike': function (events) {
-		Meteor.call('posts.unlike', this._id, Meteor.userId());
-	}
+  'click #like': function (events) {
+    Meteor.call('posts.like', this._id, Meteor.userId());
+  },
+  'click #unlike': function (events) {
+    Meteor.call('posts.unlike', this._id, Meteor.userId());
+  },
 });

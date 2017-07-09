@@ -20,76 +20,76 @@ import '../../ui/layouts/not-found.js';
 */
 
 FlowRouter.route('/', {
-  name: "home",
-  triggersEnter: [function(context, redirect) {
+  name: 'home',
+  triggersEnter: [function (context, redirect) {
     if (Meteor.userId()) {
       redirect('/posts');
     }
   }],
-  action: function(params, queryParams) {
+  action(params, queryParams) {
     BlazeLayout.render('masterLayout', {
-      main: "home"
+      main: 'home',
     });
-  }
+  },
 });
 
 
 FlowRouter.route('/posts', {
-  name: "post",
-  subscriptions: function(params) {
+  name: 'post',
+  subscriptions(params) {
     this.register('posts', Meteor.subscribe('posts.all'));
   },
-  triggersEnter: [function(context, redirect) {
+  triggersEnter: [function (context, redirect) {
     if (!Meteor.userId()) {
       redirect('/');
     }
   }],
-  action: function(params, queryParams) {
+  action(params, queryParams) {
     BlazeLayout.render('masterLayout', {
-      footer: "footer",
-      main: "post",
-      nav: "nav",
+      footer: 'footer',
+      main: 'post',
+      nav: 'nav',
     });
-  }
+  },
 });
 
 
 FlowRouter.route('/add-posts', {
-  name: "addPost",
-  subscriptions: function(params) {
+  name: 'addPost',
+  subscriptions(params) {
   },
-  triggersEnter: [function(context, redirect) {
+  triggersEnter: [function (context, redirect) {
     if (!Meteor.userId()) {
       redirect('/');
     }
   }],
-  action: function(params, queryParams) {
+  action(params, queryParams) {
     BlazeLayout.render('masterLayout', {
-      footer: "footer",
-      main: "addPost",
-      nav: "nav",
+      footer: 'footer',
+      main: 'addPost',
+      nav: 'nav',
     });
-  }
+  },
 });
 
 
 FlowRouter.notFound = {
-  action: function() {
+  action() {
     BlazeLayout.render('masterLayout', {
-      footer: "footer",
-      main: "pageNotFound",
-      nav: "nav",
+      footer: 'footer',
+      main: 'pageNotFound',
+      nav: 'nav',
     });
-  }
+  },
 };
 
 FlowRouter.route('/dashboard', {
-  action: function(params, queryParams) {
+  action(params, queryParams) {
     BlazeLayout.render('masterLayout', {
-      nav: "header",
-      main: "dashboard"
+      nav: 'header',
+      main: 'dashboard',
     });
-  }
+  },
 });
 
 
@@ -102,7 +102,6 @@ FlowRouter.route('/dashboard', {
 //     });
 //   }
 // });
-
 
 
 // Account Templates
@@ -120,14 +119,14 @@ AccountsTemplates.configure({
 
   // sendVerificationEmail: true,
   // enforceEmailVerification: true,
-  //confirmPassword: true,
-  //continuousValidation: false,
-  //displayFormLabels: true,
-  //forbidClientAccountCreation: true,
-  //formValidationFeedback: true,
-  //homeRoutePath: '/',
-  //showAddRemoveServices: false,
-  //showPlaceholders: true,
+  // confirmPassword: true,
+  // continuousValidation: false,
+  // displayFormLabels: true,
+  // forbidClientAccountCreation: true,
+  // formValidationFeedback: true,
+  // homeRoutePath: '/',
+  // showAddRemoveServices: false,
+  // showPlaceholders: true,
 
   negativeValidation: true,
   positiveValidation: true,

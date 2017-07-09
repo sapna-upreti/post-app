@@ -5,27 +5,27 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 const postSchema = new SimpleSchema({
   title: {
-  	type: String
+  	type: String,
   },
   description: {
-  	type: String
+  	type: String,
   },
   author: {
-  	type: String
+  	type: String,
   },
   likes: {
-  	type: Number
+  	type: Number,
   },
   createdAt: {
     type: Date,
-    optional: true
+    optional: true,
   },
   users: {
     type: [String],
-    optional: true
-  }
+    optional: true,
+  },
 
-})
+});
 
 const Posts = new Mongo.Collection('posts');
 Posts.attachSchema(postSchema);
