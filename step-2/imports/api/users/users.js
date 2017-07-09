@@ -1,6 +1,5 @@
 // Definition of the users collection
 
-import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 

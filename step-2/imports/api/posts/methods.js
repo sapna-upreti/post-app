@@ -5,10 +5,9 @@ import { check } from 'meteor/check';
 import Posts from './posts.js';
 
 Meteor.methods({
-  'posts.insert': function (title, description, userId) {
+  'posts.insert': function (title, description, userId = this.userId) {
     check(description, String);
     check(title, String);
-    userId = userId || this.userId;
     check(userId, String);
 
     return Posts.insert({
@@ -21,21 +20,19 @@ Meteor.methods({
       users: [],
     });
   },
-  'posts.like': function (postId, userId) {
+  'posts.like': function (postId, userId = this.userId) {
     check(postId, String);
-    userId = userId || this.userId;
     check(userId, String);
 
     return Posts.update({
-    	_id: postId,
+      _id: postId,
     }, {
-    	$inc: { likes: 1 },
-    	$push: { users: userId },
+      $inc: { likes: 1 },
+      $push: { users: userId },
     });
   },
-  'posts.unlike': function (postId, userId) {
+  'posts.unlike': function (postId, userId = this.userId) {
     check(postId, String);
-    userId = userId || this.userId;
     check(userId, String);
 
     return Posts.update({

@@ -5,16 +5,16 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 const postSchema = new SimpleSchema({
   title: {
-  	type: String,
+    type: String,
   },
   description: {
-  	type: String,
+    type: String,
   },
   author: {
-  	type: String,
+    type: String,
   },
   likes: {
-  	type: Number,
+    type: Number,
   },
   createdAt: {
     type: Date,

@@ -4,6 +4,20 @@
         "sourceType": "module",
         "allowImportExportEverywhere": true
     },
+    "settings": {
+        "import/resolver": "meteor"
+    },
+    "rules": {
+        "import/no-unresolved": 0,
+        "import/extensions": 0,
+        "import/no-extraneous-dependencies": 0,
+        "no-underscore-dangle": 0,
+        "no-unused-expressions": 0,
+        "func-names": 0,
+        "import/no-absolute-path": 0,
+        "jsx-a11y/href-no-hash": 0,
+        "object-shorthand": 0
+    },
     "plugins": [
         "react",
         "jsx-a11y",

@@ -1,6 +1,8 @@
-import { FlowRouter } from 'meteor/kadira:flow-router';
-import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { Template } from 'meteor/templating';
+import { $ } from 'meteor/jquery';
+
 import './nav.html';
+
 Template.nav.rendered = function () {
   $('.button-collapse').sideNav({
     menuWidth: 300, // Default is 300

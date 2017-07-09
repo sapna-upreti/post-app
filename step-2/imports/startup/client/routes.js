@@ -1,6 +1,4 @@
-
 import { Meteor } from 'meteor/meteor';
-import { EJSON } from 'meteor/ejson';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { AccountsTemplates } from 'meteor/useraccounts:core';
@@ -18,6 +16,8 @@ import '../../ui/layouts/not-found.js';
 /*
   Route definitions
 */
+
+/* eslint-disable no-unused-vars */
 
 FlowRouter.route('/', {
   name: 'home',
@@ -134,8 +134,8 @@ AccountsTemplates.configure({
   positiveFeedback: true,
 
   // Privacy Policy and Terms of Use
-  //privacyUrl: 'privacy',
-  //termsUrl: 'terms-of-use',
+  // privacyUrl: 'privacy',
+  // termsUrl: 'terms-of-use',
 });
 
 

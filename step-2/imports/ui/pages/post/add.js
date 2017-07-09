@@ -1,6 +1,10 @@
-import './add.html';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { Materialize } from 'meteor/materialize:materialize';
+import { Template } from 'meteor/templating';
+import { $ } from 'meteor/jquery';
+import { Meteor } from 'meteor/meteor';
+
+import './add.html';
 
 Template.addPost.rendered = function () {
 
@@ -10,8 +14,11 @@ Template.addPost.events({
   submit(event) {
     event.preventDefault();
     const data = {};
-    $('form').serializeArray().map(obj => data[obj.name] = obj.value);
-    Meteor.call('posts.insert', data.title, data.description, (err, res) => {
+    $('form').serializeArray().map((obj) => {
+      data[obj.name] = obj.value;
+      return obj;
+    });
+    Meteor.call('posts.insert', data.title, data.description, (err) => {
       if (err) {
         Materialize.toast(err.reason || 'Unknown Error', 4000, 'rounded');
       } else {
