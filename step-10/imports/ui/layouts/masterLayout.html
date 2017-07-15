@@ -1,0 +1,17 @@
+<template name="masterLayout">
+    <div id="wrapper">
+        {{#if currentUser}}
+        <!-- <header id="header" class="page-topbar">   -->
+        {{> Template.dynamic template=nav}}
+        <!-- </header> -->
+        {{/if}}
+        <main id="main">
+        {{> Template.dynamic template=main}}
+        </main>
+        {{#if currentUser}}
+        <!-- <footer id="footer" class="page-footer">   -->
+        {{> Template.dynamic template=footer}}
+        <!-- </footer> -->
+        {{/if}}
+    </div>
+</template>

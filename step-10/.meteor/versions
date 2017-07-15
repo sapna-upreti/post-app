@@ -57,7 +57,6 @@ livedata@1.0.18
 localstorage@1.1.0
 logging@1.1.17
 materialize:materialize@0.98.2
-mdg:meteor-apm-agent@3.0.0
 mdg:validation-error@0.2.0
 meteor@1.6.1
 meteor-base@1.1.0
