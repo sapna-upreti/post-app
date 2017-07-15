@@ -23,12 +23,3 @@ Template.post.helpers({
     return userIds.indexOf(Meteor.userId()) >= 0;
   },
 });
-
-Template.post.events({
-  'click #like': function () {
-    Meteor.call('posts.like', this._id, Meteor.userId());
-  },
-  'click #unlike': function () {
-    Meteor.call('posts.unlike', this._id, Meteor.userId());
-  },
-});

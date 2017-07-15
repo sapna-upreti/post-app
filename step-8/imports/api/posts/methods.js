@@ -19,5 +19,27 @@ Meteor.methods({
       createdAt: new Date(),
       users: [],
     });
-  }
+  },
+  'posts.like': function (postId, userId = this.userId) {
+    check(postId, String);
+    check(userId, String);
+
+    return Posts.update({
+      _id: postId,
+    }, {
+      $inc: { likes: 1 },
+      $push: { users: userId },
+    });
+  },
+  'posts.unlike': function (postId, userId = this.userId) {
+    check(postId, String);
+    check(userId, String);
+
+    return Posts.update({
+      _id: postId,
+    }, {
+      $inc: { likes: -1 },
+      $pop: { users: userId },
+    });
+  },
 });
