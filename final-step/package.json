@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "dev": "export MONGO_URL=mongodb://localhost:27017/app && meteor run",
+    "dev": "export MONGO_URL=mongodb://sapna:sapna@ds143767.mlab.com:43767/posts && meteor run",
     "lint": "eslint .",
     "test": "meteor test --driver-package practicalmeteor:mocha --port 3030 --once"
   },
