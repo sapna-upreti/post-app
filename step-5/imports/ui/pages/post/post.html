@@ -1,0 +1,22 @@
+<template name="post">
+  <ul class="collection">
+  {{#each posts}}
+    <li class="collection-item avatar">
+      <i class="material-icons circle">folder</i>
+      <span class="title">{{title}}</span>
+      <p>{{description}}
+      </p>
+      <p>Likes: {{likes}}</p>
+      {{#if isLiked users}}
+        <a href="" id="unlike" class="secondary-content waves-effect waves-light"><i class="material-icons">thumb_down</i></a>
+      {{else}}
+        <a href="" id="like" class="secondary-content waves-effect waves-light"><i class="material-icons">thumb_up</i></a>
+      {{/if}}
+    </li>
+    {{else}}
+  <div>
+    No post to display yet!
+  </div>
+    {{/each}}
+  </ul>
+</template>
