@@ -43,3 +43,4 @@ spacebars
 check
 aldeed:simple-schema
 aldeed:collection2
+mdg:meteor-apm-agent
