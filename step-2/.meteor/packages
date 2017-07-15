@@ -23,23 +23,3 @@ less@2.7.9                    # Leaner CSS language
 
 practicalmeteor:mocha             # A package for writing and running your meteor app and package tests with mocha
 johanbrook:publication-collector  # Test a Meteor publication by collecting its output
-useraccounts:materialize
-accounts-ui
-accounts-password
-useraccounts:flow-routing
-materialize:materialize
-meteorstuff:materialize-modal
-arillo:flow-router-helpers
-
-fortawesome:fontawesome
-zimme:active-route
-session
-jquery
-logging
-reload
-random
-ejson
-spacebars
-check
-aldeed:simple-schema
-aldeed:collection2
